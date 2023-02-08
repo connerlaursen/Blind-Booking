@@ -11,16 +11,20 @@ Destination.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
+    destination_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    address: {
-        type: DataTypes.String,
+    airport_code: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    price: {
+        type: DataTypes.INTEGER,
         allowNull: false,
     },
     category_id: {
-        type: Datatypes.INTEGAR,
+        type: DataTypes.INTEGER,
         references: {
             model: 'category',
             key: 'id',
