@@ -1,4 +1,4 @@
-const { Destinations } = require('../../models');
+const { Destination } = require('../models');
 
 const destinationData = [
 
@@ -138,6 +138,6 @@ const destinationData = [
   },
 ];
 
-const seedDestinations = () => Destinations.bulkCreate(destinationData);
+const seedDestinations = () => Destination.bulkCreate(destinationData);
 
 module.exports = seedDestinations;
