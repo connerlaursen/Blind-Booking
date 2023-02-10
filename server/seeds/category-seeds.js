@@ -2,19 +2,19 @@ const { Category } = require('../models');
 
 const categoryData = [
   {
-    category_name: 'Skiing',
+    category_name: 'Mountains/Skiing',
   },
   {
-    category_name: 'Beaches',
+    category_name: 'Beach',
   },
   {
     category_name: 'City',
   },
   {
-    category_name: 'Cultural',
+    category_name: 'History/Culture',
   },
   {
-    category_name: 'Foody',
+    category_name: 'Food',
   },
 ];
 
