@@ -1,4 +1,4 @@
-const { Destinations } = require('../models');
+const { Destinations } = require('../../models');
 
 const destinationData = [
 
