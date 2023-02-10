@@ -6,8 +6,8 @@ function Contact() {
             <NavBar />
             <form method="post">
                 <label>
-                    What's in your mind?
-                    <input name="postTitle" defaultValue="History" />
+                    What's on your mind?
+                    <input name="postTitle" defaultValue="History/Culture" />
                 </label>
                 <label>
                     Message:
