@@ -13,15 +13,22 @@ code {
     monospace;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
 /* logo styling */
-#logo img {
+/* #logo img {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 50%;
   height: 50%
-}
+} */
 
 /* NavBar styling */
 ul {
@@ -30,6 +37,10 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #059a93;
+}
+
+.topnav-right {
+  float: right;
 }
 
 li {
@@ -61,6 +72,14 @@ li a:hover {
 
 #dreamVacay {
   color: #059a93;
+}
+
+#center {
+  text-align: center;
+  margin: auto;
+  width: 30%;
+  border: 3px solid rgb(31, 189, 201);
+  padding: 0px;
 }
 
 
