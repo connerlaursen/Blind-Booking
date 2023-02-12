@@ -15,13 +15,13 @@ const NavBar = ({ clickOnSet }) => {
                         <div class="topnav-right"> <li><a className="ul" href="/login">Login</a></li></div>
                     </ul>
                     <div>
-                        <img id="logo" src="./BB Logo.png" width="350px" />
+                        <img id="logo" src="./BBLLC Logo2.png" width="350px" />
                         {/* <button onClick={clickOnSignIn}>sign in</button> */}
                     </div>
                 </nav>
             </header>
             <footer id="content-wrap">
-                <small id="footer">Copyright 2023 BBLLC. All rights reserved.</small>
+                <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
             </footer>
         </div>
     )

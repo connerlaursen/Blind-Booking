@@ -4,8 +4,8 @@ function Home() {
     return (
         <div>
             <NavBar />
-            <div id="center">
-                <h1 id="dreamVacay">A DREAM VACATION FOR A DREAM PRICE</h1>
+            <div id="dreamVacay">
+                <h1>A DREAM VACATION FOR A DREAM PRICE</h1>
             </div>
 
         </div>
