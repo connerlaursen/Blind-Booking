@@ -10,13 +10,16 @@ router.get('/destination', async (req, res) => {
     const {maxPrice} = req.query;
     const {numPassengers} = req.query;
     let userInput = { category, departureDate, returnDate, maxPrice, numPassengers }
-    console.log(category);
+    console.log("category", category);
     
-    let categoryCode = Destination.findAll({
+    let categoryCode = await Destination.findAll({
        where: {
-        categoryId: category
+        category_id: category
        }
     })
+
+    categoryCode = categoryCode.map(code => code.dataValues.airport_code)
+    console.log(categoryCode)
 
     function pickRandomCity(categoryCode){
         let min = Math.ceil(0);
@@ -37,8 +40,9 @@ router.get('/destination', async (req, res) => {
         categoryCode = categoryCode.filter((item,index)=> index != randomIndex)
         
         userInput.arrivalCity = arrivalCity
+        console.log(arrivalCity)
         testVar = await callPriceline(userInput)
-    
+        
 
     }
     console.log({testVar})
@@ -47,7 +51,7 @@ router.get('/destination', async (req, res) => {
     if (testVar == null){
         res.json({ message:"No flights found for your max price" })
     } else{
-    res.json({testVar});}
+    res.json({testVar, arrivalCity});}
 });
 
 module.exports = router;

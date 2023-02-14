@@ -27,13 +27,14 @@ const options = {
 console.log("userInput",userInput)
 
 var userInputMaxprice = userInput.maxPrice
-console.log(options)
+console.log("options", options)
 
 
 
 var response = await new Promise((res, rej) => {
   axios.request(options)
   .then(function (response) {
+    // console.log(response.data)
   var price = response.data.totalTripSummary.airline;
   let lowestFare = Infinity;
   let airlineCode = null; 
