@@ -13,14 +13,12 @@ code {
     monospace;
 }
 
-/* logo styling */
-#logo img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 50%
+/* logo */
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
 }
 
 /* NavBar styling */
@@ -30,6 +28,10 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #059a93;
+}
+
+.topnav-right {
+  float: right;
 }
 
 li {
@@ -59,11 +61,17 @@ li a:hover {
   background-color: #5d998d;
 }
 
+/* text on home page */
 #dreamVacay {
   color: #059a93;
+  text-align: center;
+  margin: auto;
+  width: 30%;
+  border: 1px solid rgb(31, 189, 201);
+  padding: 0px;
 }
 
-
+/* footer */
 #footer {
   position: absolute;
   bottom: 0;
@@ -71,6 +79,7 @@ li a:hover {
   height: 2.5rem;
   display: table;
   text-align: center;
+  font-size: x-small;
   margin-left: auto;
   margin-right: auto;
   background-color: #059a93;
@@ -78,6 +87,81 @@ li a:hover {
   /* Footer height */
 }
 
-#options {
+
+/* about page */
+#about {
   color: #059a93;
+  text-align: center;
+}
+
+#about p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 50px 100px 100px 50px;
+}
+
+.activityDropDown,
+.maxAmount,
+.numPass {
+  color: #059a93;
+  padding: 5px;
+  margin: 2px;
+}
+
+.activityDropDown {
+  width: 177px;
+  height: 30px;
+
+}
+
+/* contact page */
+#contactDiv {
+  color: #059a93;
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  left: 375px;
+  padding: 50px;
+  margin: 2px;
+}
+
+.dateSelector {
+  color: #059a93;
+  position: absolute;
+  top: 300px;
+  left: 375px;
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  margin: 2px;
+}
+
+/* activity inputs */
+#inputs {
+  position: absolute;
+  top: 300px;
+  right: 375px;
+  width: 200px;
+  height: 100px;
+}
+
+/* submit button on booking page */
+#submitBtn {
+  position: absolute;
+  top: 420px;
+  left: 387px;
+  width: 170px;
+  height: 40px;
+  background-color: #059a93;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+
+}
+
+#submitBtn:hover {
+  background-color: #4cbebe;
+  transition-duration: 0.4s;
 }
