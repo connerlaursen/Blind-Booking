@@ -1,11 +1,17 @@
 import NavBar from "../components/NavBar";
 import DatePicker from 'react-datepicker';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css'
 
-function BookTrip() {
+function BookTrip(props) {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
+
+    useEffect(() => {
+        console.log(departureDate)
+        console.log(returnDate)
+    }, []);
+
     return (
         <div>
             <NavBar />
