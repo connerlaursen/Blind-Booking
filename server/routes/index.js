@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const userRoutes = require('./userRoutes.js')
 const callPriceline = require('../controllers/priceline-route');
 const { Destination, Category } = require('../models');
 
@@ -53,5 +54,7 @@ router.get('/destination', async (req, res) => {
     } else{
     res.json({testVar, arrivalCity});}
 });
+
+router.use('/users', userRoutes);
 
 module.exports = router;

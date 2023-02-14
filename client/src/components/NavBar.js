@@ -12,7 +12,7 @@ const NavBar = ({ clickOnSet }) => {
                         <li><a className="ul" href="/book">Book Trip</a></li>
                         <li><a className="ul" href="/about">About</a></li>
                         <li><a className="ul" href="/contact">Contact</a></li>
-                        <div class="topnav-right"> <li><a className="ul" href="/login">Login</a></li></div>
+                        <div className="topnav-right"> <li><a className="ul" href="/login">Login</a></li></div>
                     </ul>
                     <div>
                         <img id="logo" src="./BBLLC Logo2.png" width="350px" />
