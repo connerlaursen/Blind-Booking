@@ -8,7 +8,8 @@ function BookTrip(props) {
     const [returnDate, setReturnDate] = useState(new Date());
 
     useEffect(() => {
-        console.log('//call api here')
+        console.log(departureDate)
+        console.log(returnDate)
     }, []);
 
     return (
