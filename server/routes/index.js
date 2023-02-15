@@ -3,7 +3,7 @@ const userRoutes = require('./userRoutes.js')
 const callPriceline = require('../controllers/priceline-route');
 const { Destination, Category } = require('../models');
 
-router.get('/destination', async (req, res) => {
+router.get('/booking', async (req, res) => {
     console.log(req.query)
     const {category} = req.query;
     const {departureDate} = req.query;
