@@ -70,7 +70,7 @@ function BookTrip() {
                 <div id="inputs">
                     <label className="activityDropDown">
                         Select favorite activity:
-                        <select className="activityDropDown" value={activityDropDown} onChange={e => setcategory(e.target.value)}>
+                        <select className="activityDropDown" value={category} onChange={e => setcategory(e.target.value)}>
                             <option value="food">Food</option>
                             <option value="beach">Beach</option>
                             <option value="history">History/Culture</option>
