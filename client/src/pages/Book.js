@@ -70,7 +70,7 @@ function BookTrip() {
                 <div id="inputs">
                     <label className="activityDropDown">
                         Select favorite activity:
-                        <select className="activityDropDown" value={activityDropDown} onChange={e => setactivityDropDown(e.target.value)}>
+                        <select className="activityDropDown" value={activityDropDown} onChange={e => setcategory(e.target.value)}>
                             <option value="food">Food</option>
                             <option value="beach">Beach</option>
                             <option value="history">History/Culture</option>
@@ -78,10 +78,10 @@ function BookTrip() {
                             <option value="skiing">Mountain/Skiing</option>
                         </select>
                     </label>
-                    <label>Max. Amount</label>
-                    <input value={maxAmount} onChange={e => setmaxAmount(e.target.value)} />
+                    <label>Max. Price</label>
+                    <input value={maxPrice} onChange={e => setmaxPrice(e.target.value)} />
                     <label>Number of Passengers</label>
-                    <input value={numPass} onChange={e => setnumPass(e.target.value)} />
+                    <input value={numPassengers} onChange={e => setnumPassengers(e.target.value)} />
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
