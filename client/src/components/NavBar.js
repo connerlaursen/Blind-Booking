@@ -15,7 +15,7 @@ const NavBar = ({ clickOnSet }) => {
                         <div className="topnav-right"> <li><a className="ul" href="/login">Login</a></li></div>
                     </ul>
                     <div>
-                        <img id="logo" src="./BBLLC Logo2.png" width="350px" />
+                        <img id="logo" src="/BBLLC Logo2.png" width="350px" />
                         {/* <button onClick={clickOnSignIn}>sign in</button> */}
                     </div>
                 </nav>

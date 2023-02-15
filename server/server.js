@@ -4,6 +4,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const apiRouter = require('./routes');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 3001;
 
