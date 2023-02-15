@@ -10,31 +10,33 @@ console.log(REACT_APP_BACKEND_API)
 function BookTrip() {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
-    const [maxAmount, setmaxAmount] = useState("0.00");
-    const [numPass, setnumPass] = useState("0");
-    const [activityDropDown, setactivityDropDown] = useState("food");
+    const [maxPrice, setmaxPrice] = useState("0.00");
+    const [numPassengers, setnumPassengers] = useState("0");
+    const [category, setcategory] = useState("food");
 
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const url = `${REACT_APP_BACKEND_API}/path/to/endpoint`;
+        const url = `${REACT_APP_BACKEND_API}/booking`;
 
         try {
             let res = await fetch(url, {
                 method: "POST",
                 body: JSON.stringify({
-                    maxAmount: maxAmount,
-                    numPass: numPass,
-                    activityDropDown: activityDropDown,
+                    maxPrice: maxPrice,
+                    numPassengers: numPassengers,
+                    category: category,
                     departureDate: departureDate,
                     returnDate: returnDate
                 }),
             });
             let resJson = await res.json();
             if (res.status === 200) {
-                setmaxAmount("");
-                setnumPass("");
-                setactivityDropDown("");
+                setmaxPrice("");
+                setnumPassengers("");
+                setcategory("");
+                setDepartureDate("");
+                setReturnDate("");
                 // setMessage("User created successfully");
             } else {
                 // setMessage("Some error occured");
