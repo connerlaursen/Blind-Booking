@@ -18,31 +18,23 @@ function BookTrip() {
         e.preventDefault();
 
         const url = `${REACT_APP_BACKEND_API}/book`;
-
+        let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
+            
         try {
-            let res = await fetch(url, {
-                method: "POST",
-                mode: 'no-cors',
-                body: JSON.stringify({
-                    maxPrice: maxPrice,
-                    numPassengers: numPassengers,
-                    category: category,
-                    departureDate: departureDate,
-                    returnDate: returnDate,
-                    
-                }),
-            });
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setmaxPrice("");
-                setnumPassengers("");
-                setcategory("");
-                setDepartureDate("");
-                setReturnDate("");
-                // setMessage("User created successfully");
-            } else {
-                // setMessage("Some error occured");
-            }
+            fetch(url+requestData)
+            .then(res=>res.json())
+            .then(data=>console.log(data));
+            // let resJson = await res.json();
+            // if (res.status === 200) {
+            //     setmaxPrice("");
+            //     setnumPassengers("");
+            //     setcategory("");
+            //     setDepartureDate("");
+            //     setReturnDate("");
+            //     // setMessage("User created successfully");
+            // } else {
+            //     // setMessage("Some error occured");
+            // }
         } catch (err) {
             console.log(err);
         }
@@ -73,11 +65,11 @@ function BookTrip() {
                     <label className="activityDropDown">
                         Select favorite activity:
                         <select className="activityDropDown" value={category} onChange={e => setcategory(e.target.value)}>
-                            <option value="food">Food</option>
-                            <option value="beach">Beach</option>
-                            <option value="history">History/Culture</option>
-                            <option value="city">City</option>
-                            <option value="skiing">Mountain/Skiing</option>
+                            <option value="5">Food</option>
+                            <option value="2">Beach</option>
+                            <option value="4">History/Culture</option>
+                            <option value="3">City</option>
+                            <option value="1">Mountain/Skiing</option>
                         </select>
                     </label>
                     <label>Max. Price</label>

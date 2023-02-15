@@ -6,12 +6,19 @@ const { Destination, Category } = require('../models');
 router.get('/book', async (req, res) => {
     console.log(req.query)
     const { category } = req.query;
-    const { departureDate } = req.query;
-    const { returnDate } = req.query;
+    let { departureDate } = req.query;
+    departureDate = new Date(departureDate);
+    departureDate=departureDate.toISOString().substring(0,10);
+    // const { departureDate } = req.query;
+    // const { returnDate } = req.query;
+    let { returnDate } = req.query;
+    returnDate = new Date(returnDate);
+    returnDate=returnDate.toISOString().substring(0,10);
     const { maxPrice } = req.query;
     const { numPassengers } = req.query;
     let userInput = { category, departureDate, returnDate, maxPrice, numPassengers }
     console.log("category", category);
+    console.log(userInput);
 
     let categoryCode = await Destination.findAll({
         where: {
