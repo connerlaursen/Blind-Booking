@@ -17,17 +17,19 @@ function BookTrip() {
     async function handleSubmit(e) {
         e.preventDefault();
 
-        const url = `${REACT_APP_BACKEND_API}/booking`;
+        const url = `${REACT_APP_BACKEND_API}/book`;
 
         try {
             let res = await fetch(url, {
                 method: "POST",
+                mode: 'no-cors',
                 body: JSON.stringify({
                     maxPrice: maxPrice,
                     numPassengers: numPassengers,
                     category: category,
                     departureDate: departureDate,
-                    returnDate: returnDate
+                    returnDate: returnDate,
+                    
                 }),
             });
             let resJson = await res.json();
