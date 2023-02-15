@@ -38,8 +38,8 @@ const destinationData = [
     category_id: 2,
   },
   {
-    destination_name: 'San Diego',
-    airport_code: 'SAN',
+    destination_name: 'Tampa Bay',
+    airport_code: 'TPA',
     price: 0,
     category_id: 2,
   },
