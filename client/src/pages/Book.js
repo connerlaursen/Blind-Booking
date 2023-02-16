@@ -7,38 +7,56 @@ const { REACT_APP_BACKEND_API } = process.env;
 
 console.log(REACT_APP_BACKEND_API)
 
-function BookTrip() {
+const BookTrip = () => {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
     const [maxPrice, setmaxPrice] = useState("0.00");
     const [numPassengers, setnumPassengers] = useState("0");
     const [category, setcategory] = useState("food");
+    const [flightData, setFlightData] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    async function handleSubmit(e) {
+     const handleSubmit = (e) => {
+       
+
+        setLoading(true)
         e.preventDefault();
 
-        const url = `${REACT_APP_BACKEND_API}/book`;
-        let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
-            
-        try {
+            const url = `${REACT_APP_BACKEND_API}/book`;
+            let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
             fetch(url+requestData)
             .then(res=>res.json())
-            .then(data=>console.log(data));
-            // let resJson = await res.json();
-            // if (res.status === 200) {
-            //     setmaxPrice("");
-            //     setnumPassengers("");
-            //     setcategory("");
-            //     setDepartureDate("");
-            //     setReturnDate("");
-            //     // setMessage("User created successfully");
-            // } else {
-            //     // setMessage("Some error occured");
-            // }
-        } catch (err) {
-            console.log(err);
+            .then(data=>{
+                console.log(data)
+                setFlightData(data)
+            });
+            
+    //     try {
+    //         fetch(url+requestData)
+    //         .then(res=>res.json())
+    //         .then(data=>console.log(data));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
         }
-    }
+  
+
+    useEffect( () => {
+        const url = `${REACT_APP_BACKEND_API}/book`;
+        let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
+        setLoading(true);
+        fetch(url+requestData)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log("=========================================")
+                console.log(data)
+                console.log("=========================================")
+                setFlightData(data)
+                setLoading(false)
+    });
+
+
+    }, [] )
 
     return (
         <div>
@@ -57,7 +75,7 @@ function BookTrip() {
                     <DatePicker
                         selected={returnDate}
                         onChange={(date) => setReturnDate(date)}
-                        minDate={new Date}
+                        minDate={new Date()}
                     />
 
                 </div>
@@ -72,13 +90,38 @@ function BookTrip() {
                             <option value="1">Mountain/Skiing</option>
                         </select>
                     </label>
-                    <label>Max. Price</label>
+                    <label>Budget
+                    </label>
                     <input value={maxPrice} onChange={e => setmaxPrice(e.target.value)} />
                     <label>Number of Passengers</label>
                     <input value={numPassengers} onChange={e => setnumPassengers(e.target.value)} />
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
+            {flightData.length > 0 ?(<p>loading</p>
+            
+
+
+            ):
+            
+            
+            Object.hasOwn(flightData, "message") 
+            
+            ?(
+                <p></p>
+            
+            )
+            :(
+                <ul>
+                   airport: {flightData.arrivalCity}
+                   airline: {flightData.testVar?.airlineCode}
+                   price: {flightData.testVar?.lowestFare}
+
+                </ul>
+                
+
+            )
+            }
         </div>
     );
 };

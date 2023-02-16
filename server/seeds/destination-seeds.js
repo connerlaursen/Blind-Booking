@@ -55,6 +55,12 @@ const destinationData = [
     price: 0,
     category_id: 2,
   },
+  {
+    destination_name: 'San Diego',
+    airport_code: 'SAN',
+    price: 0,
+    category_id: 2,
+  },
 
 // city category
 
