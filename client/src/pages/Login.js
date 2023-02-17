@@ -7,8 +7,36 @@ function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     console.log('get data!')
-    navigate('/book');
+    // navigate('/book');
+    fetch('http://localhost:3001/api/users/login',{
+      method:"POST",
+      body:JSON.stringify({
+        email:"abc@abc.com",
+        password:"12345678"
+      })
+    })
+    .then(res=>res.json())
+    .then(data=> {
+      navigate('/book')
+    })
   }
+
+  function createUser(e) {
+    e.preventDefault();
+    fetch('http://localhost:3001/api/users/',{
+      method:"POST",
+      body:JSON.stringify({
+        username:"johnDoe123",
+        email:"abc@abc.com",
+        password:"12345678",
+
+      })
+    })
+    .then(res=>res.json())
+    .then(data=> {
+      navigate('/book')
+    })
+    }
 
   //use session cookies
 
@@ -61,7 +89,8 @@ function Login() {
               <input class="form-input" type="password" id="password-signup" />
             </div>
             <div class="form-group">
-              <button class="btn btn-primary" type="submit">signup</button>
+              <button class="btn btn-primary" type="submit" onClick={createUser}>signup</button>
+              
             </div>
             </div>
             </div>
