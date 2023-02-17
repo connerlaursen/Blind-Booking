@@ -6,16 +6,16 @@ function Contact() {
             <NavBar />
             <div id="contactDiv">
                 <form method="post">
-                    <label>
-                        What's on your mind?
-                        <input name="postTitle" defaultValue="History/Culture" />
+                    <label className="contactMessage">
+
+                        <input name="postTitle" placeholder="Subject" />
                     </label>
                     <label className="contactMessage">
-                        Message:
-                        <textarea name="postContent" rows={4} cols={40} />
+
+                        <textarea name="postContent" placeholder="Enter text here" rows={4} cols={40} />
                     </label>
-                    <button type="clear">Clear</button>
-                    <button type="send">Send</button>
+                    <button className="contactBtn" type="clear">Clear</button>
+                    <button className="contactBtn" type="send">Send</button>
                 </form>
             </div>
             <footer id="content-wrap">

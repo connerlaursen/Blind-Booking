@@ -72,6 +72,7 @@ li a:hover {
   margin: auto;
   width: 30%;
   border: 1px solid rgb(31, 189, 201);
+  border-radius: 5px;
   padding: 0px;
 }
 
@@ -118,8 +119,10 @@ li a:hover {
   color: #059a93;
   padding: 5px;
   margin: 2px;
+  /* background-color: aqua; */
 }
 
+/* dropdown list on booking page */
 .activityDropDown {
   width: 170px;
   height: 30px;
@@ -151,6 +154,7 @@ li a:hover {
   height: 100px;
   padding: 10px;
   margin: 2px;
+  /* background-color: aqua; */
 }
 
 /* activity inputs */
@@ -160,6 +164,7 @@ li a:hover {
   right: 375px;
   width: 200px;
   height: 100px;
+  /* background-color: aqua; */
 }
 
 /* submit button on booking page */
@@ -174,13 +179,13 @@ li a:hover {
   border-radius: 2px;
   color: white;
   font-size: 16px;
-
 }
 
 #submitBtn:hover {
   background-color: #4cbebe;
   transition-duration: 0.4s;
 }
+
 
 .loginCard {
   display: flex;
@@ -213,4 +218,25 @@ border: 3px solid black;
 .loginFields{
   display: flex;
   flex-direction: column;
+
+/* send and clear button on contact page */
+.contactBtn {
+  background-color: #059a93;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+}
+
+.contactBtn:hover {
+  background-color: #4cbebe;
+  transition-duration: 0.4s;
+}
+
+.contactMessage {
+  /* margin: 25px; */
+  margin: 20px;
+
 }

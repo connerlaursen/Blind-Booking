@@ -7,42 +7,57 @@ const { REACT_APP_BACKEND_API } = process.env;
 
 console.log(REACT_APP_BACKEND_API)
 
-function BookTrip() {
+const BookTrip = () => {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
-    const [maxAmount, setmaxAmount] = useState("0.00");
-    const [numPass, setnumPass] = useState("1");
-    const [activityDropDown, setactivityDropDown] = useState("food");
+    const [maxPrice, setmaxPrice] = useState("0.00");
+    const [numPassengers, setnumPassengers] = useState("0");
+    const [category, setcategory] = useState("food");
+    const [flightData, setFlightData] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    async function handleSubmit(e) {
+
+     const handleSubmit = (e) => {
+       
+
+        setLoading(true)
         e.preventDefault();
 
-        const url = `${REACT_APP_BACKEND_API}/path/to/endpoint`;
-
-        try {
-            let res = await fetch(url, {
-                method: "POST",
-                body: JSON.stringify({
-                    maxAmount: maxAmount,
-                    numPass: numPass,
-                    activityDropDown: activityDropDown,
-                    departureDate: departureDate,
-                    returnDate: returnDate
-                }),
+            const url = `${REACT_APP_BACKEND_API}/book`;
+            let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
+            fetch(url+requestData)
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                setFlightData(data)
             });
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setmaxAmount("");
-                setnumPass("");
-                setactivityDropDown("");
-                // setMessage("User created successfully");
-            } else {
-                // setMessage("Some error occured");
-            }
-        } catch (err) {
-            console.log(err);
+            
+    //     try {
+    //         fetch(url+requestData)
+    //         .then(res=>res.json())
+    //         .then(data=>console.log(data));
+    //     } catch (err) {
+    //         console.log(err);
+    //     }
         }
-    }
+  
+
+    useEffect( () => {
+        const url = `${REACT_APP_BACKEND_API}/book`;
+        let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
+        setLoading(true);
+        fetch(url+requestData)
+            .then(res=>res.json())
+            .then(data=> {
+                console.log("=========================================")
+                console.log(data)
+                console.log("=========================================")
+                setFlightData(data)
+                setLoading(false)
+    });
+
+
+    }, [] )
 
     return (
         <div>
@@ -62,34 +77,64 @@ function BookTrip() {
                     <DatePicker
                         selected={returnDate}
                         onChange={(date) => setReturnDate(date)}
-                        minDate={new Date}
+                        minDate={new Date()}
                     />
 
                 </div>
                 <div id="inputs">
                     <label className="activityDropDown">
                         Select favorite activity:
-                        <select className="activityDropDown" value={activityDropDown} onChange={e => setactivityDropDown(e.target.value)}>
-                            <option value="food">Food</option>
-                            <option value="beach">Beach</option>
-                            <option value="history">History/Culture</option>
-                            <option value="city">City</option>
-                            <option value="skiing">Mountain/Skiing</option>
+                        <select className="activityDropDown" value={category} onChange={e => setcategory(e.target.value)}>
+                            <option value="5">Food</option>
+                            <option value="2">Beach</option>
+                            <option value="4">History/Culture</option>
+                            <option value="3">City</option>
+                            <option value="1">Mountain/Skiing</option>
                         </select>
                     </label>
-                    <label>Max. Amount</label>
-                    <input value={maxAmount} onChange={e => setmaxAmount(e.target.value)} />
+                    <label>Budget
+                    </label>
+                    <input value={maxPrice} onChange={e => setmaxPrice(e.target.value)} />
                     <label>Number of Passengers</label>
-                    <input value={numPass} onChange={e => setnumPass(e.target.value)} />
+                    <input value={numPassengers} onChange={e => setnumPassengers(e.target.value)} />
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
-            </div>
+
+           
+
+            {flightData.length > 0 ?(<p>loading</p>
+            
+
+
+            ):
+            
+            
+            Object.hasOwn(flightData, "message") 
+            
+            ?(
+                <p></p>
+            
+            )
+            :(
+                <ul>
+                   airport: {flightData.arrivalCity}
+                   airline: {flightData.testVar?.airlineCode}
+                   price: {flightData.testVar?.lowestFare}
+
+                </ul>
+                
+
+            )
+            }
+        </div>
             <footer id="content-wrap">
                 <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
             </footer>
         </div>
     );
 };
+
+
 
 export default BookTrip;
