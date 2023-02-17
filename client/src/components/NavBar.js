@@ -20,9 +20,7 @@ const NavBar = ({ clickOnSet }) => {
                     </div>
                 </nav>
             </header>
-            <footer id="content-wrap">
-                <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
-            </footer>
+            
         </div>
     )
 }

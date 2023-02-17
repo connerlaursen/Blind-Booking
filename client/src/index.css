@@ -1,4 +1,8 @@
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background: #cbe3de;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -74,7 +78,7 @@ li a:hover {
 
 /* footer */
 #footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
@@ -102,6 +106,13 @@ li a:hover {
   padding: 50px 100px 100px 50px;
 }
 
+.bookingCard {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  
+}
+
 .activityDropDown,
 .maxAmount,
 .numPass {
@@ -113,9 +124,14 @@ li a:hover {
 
 /* dropdown list on booking page */
 .activityDropDown {
-  width: 177px;
+  width: 170px;
   height: 30px;
 
+}
+
+#formCard {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* contact page */
@@ -131,7 +147,7 @@ li a:hover {
 
 .dateSelector {
   color: #059a93;
-  position: absolute;
+  display: table;
   top: 300px;
   left: 375px;
   width: 200px;
@@ -143,7 +159,7 @@ li a:hover {
 
 /* activity inputs */
 #inputs {
-  position: absolute;
+  display: table;
   top: 300px;
   right: 375px;
   width: 200px;
@@ -153,7 +169,7 @@ li a:hover {
 
 /* submit button on booking page */
 #submitBtn {
-  position: absolute;
+  /* position: absolute; */
   top: 420px;
   left: 387px;
   width: 170px;
@@ -169,6 +185,39 @@ li a:hover {
   background-color: #4cbebe;
   transition-duration: 0.4s;
 }
+
+
+.loginCard {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+ 
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px;
+  
+}
+
+.loginMainCard{
+display: flex;
+border: 3px solid black;
+
+}
+
+.logoutMainCard{
+display: flex;
+border: 3px solid black;
+
+}
+
+.form-elements{
+  padding: 5px;
+
+}
+
+.loginFields{
+  display: flex;
+  flex-direction: column;
 
 /* send and clear button on contact page */
 .contactBtn {
@@ -189,4 +238,5 @@ li a:hover {
 .contactMessage {
   /* margin: 25px; */
   margin: 20px;
+
 }

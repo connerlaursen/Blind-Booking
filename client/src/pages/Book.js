@@ -16,6 +16,7 @@ const BookTrip = () => {
     const [flightData, setFlightData] = useState([]);
     const [loading, setLoading] = useState(false);
 
+
      const handleSubmit = (e) => {
        
 
@@ -61,7 +62,8 @@ const BookTrip = () => {
     return (
         <div>
             <NavBar />
-            <form className="maxAmount">
+            <div className = "bookingCard">
+            <form className="maxAmount" id="formCard">
                 <div className="dateSelector">
                     <label className="travelDates">Departure Date</label>
                     <DatePicker
@@ -98,6 +100,9 @@ const BookTrip = () => {
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
+
+           
+
             {flightData.length > 0 ?(<p>loading</p>
             
 
@@ -122,6 +127,10 @@ const BookTrip = () => {
 
             )
             }
+        </div>
+            <footer id="content-wrap">
+                <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
+            </footer>
         </div>
     );
 };
