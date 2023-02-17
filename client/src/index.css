@@ -166,7 +166,7 @@ li a:hover {
 }
 
 #submitBtn:hover {
-  background-color: #4cbebe;
+  background-color: #055858;
   transition-duration: 0.4s;
 }
 
@@ -183,7 +183,7 @@ li a:hover {
 
 .contactBtn:hover {
   background-color: #4cbebe;
-  transition-duration: 0.4s;
+  transition-duration: 0.9s;
 }
 
 .contactMessage {

@@ -10,53 +10,53 @@ console.log(REACT_APP_BACKEND_API)
 const BookTrip = () => {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
-    const [maxPrice, setmaxPrice] = useState("0.00");
-    const [numPassengers, setnumPassengers] = useState("0");
+    const [maxPrice, setmaxPrice] = useState("1000.00");
+    const [numPassengers, setnumPassengers] = useState("1");
     const [category, setcategory] = useState("food");
     const [flightData, setFlightData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-     const handleSubmit = (e) => {
-       
+    const handleSubmit = (e) => {
+
 
         setLoading(true)
         e.preventDefault();
 
-            const url = `${REACT_APP_BACKEND_API}/book`;
-            let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
-            fetch(url+requestData)
-            .then(res=>res.json())
-            .then(data=>{
+        const url = `${REACT_APP_BACKEND_API}/book`;
+        let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
+        fetch(url + requestData)
+            .then(res => res.json())
+            .then(data => {
                 console.log(data)
                 setFlightData(data)
             });
-            
-    //     try {
-    //         fetch(url+requestData)
-    //         .then(res=>res.json())
-    //         .then(data=>console.log(data));
-    //     } catch (err) {
-    //         console.log(err);
-    //     }
-        }
-  
 
-    useEffect( () => {
+        //     try {
+        //         fetch(url+requestData)
+        //         .then(res=>res.json())
+        //         .then(data=>console.log(data));
+        //     } catch (err) {
+        //         console.log(err);
+        //     }
+    }
+
+
+    useEffect(() => {
         const url = `${REACT_APP_BACKEND_API}/book`;
         let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
         setLoading(true);
-        fetch(url+requestData)
-            .then(res=>res.json())
-            .then(data=> {
+        fetch(url + requestData)
+            .then(res => res.json())
+            .then(data => {
                 console.log("=========================================")
                 console.log(data)
                 console.log("=========================================")
                 setFlightData(data)
                 setLoading(false)
-    });
+            });
 
 
-    }, [] )
+    }, [])
 
     return (
         <div>
@@ -98,29 +98,29 @@ const BookTrip = () => {
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
-            {flightData.length > 0 ?(<p>loading</p>
-            
+            {flightData.length > 0 ? (<p>loading</p>
 
 
-            ):
-            
-            
-            Object.hasOwn(flightData, "message") 
-            
-            ?(
-                <p></p>
-            
-            )
-            :(
-                <ul>
-                   airport: {flightData.arrivalCity}
-                   airline: {flightData.testVar?.airlineCode}
-                   price: {flightData.testVar?.lowestFare}
 
-                </ul>
-                
+            ) :
 
-            )
+
+                Object.hasOwn(flightData, "message")
+
+                    ? (
+                        <p></p>
+
+                    )
+                    : (
+                        <ul>
+                            airport: {flightData.arrivalCity}
+                            airline: {flightData.testVar?.airlineCode}
+                            price: {flightData.testVar?.lowestFare}
+
+                        </ul>
+
+
+                    )
             }
         </div>
     );
