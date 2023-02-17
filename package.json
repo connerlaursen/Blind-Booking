@@ -1,0 +1,36 @@
+{
+  "name": "blind-booking",
+  "version": "1.0.0",
+  "description": "A blind booking vacation application",
+  "main": "server.js",
+  "scripts": {
+    "build": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connerlaursen/Blind-Booking.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/connerlaursen/Blind-Booking/issues"
+  },
+  "homepage": "https://github.com/connerlaursen/Blind-Booking#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "axios": "^1.3.2",
+    "connect-session-sequelize": "^7.1.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.1.0",
+    "react": "^18.2.0",
+    "sequelize": "^6.28.0"
+  }
+}
