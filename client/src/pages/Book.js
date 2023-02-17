@@ -12,7 +12,7 @@ const BookTrip = () => {
     const [returnDate, setReturnDate] = useState(new Date());
     const [maxPrice, setmaxPrice] = useState("0.00");
     const [numPassengers, setnumPassengers] = useState("0");
-    const [category, setcategory] = useState("food");
+    const [category, setcategory] = useState("-------");
     const [flightData, setFlightData] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -82,6 +82,7 @@ const BookTrip = () => {
                     <label className="activityDropDown">
                         Select favorite activity:
                         <select className="activityDropDown" value={category} onChange={e => setcategory(e.target.value)}>
+                            <option value="0">-------</option>
                             <option value="5">Food</option>
                             <option value="2">Beach</option>
                             <option value="4">History/Culture</option>
@@ -114,12 +115,12 @@ const BookTrip = () => {
             
             )
             :(
-                <ul>
-                   airport: {flightData.arrivalCity}
-                   airline: {flightData.testVar?.airlineCode}
-                   price: {flightData.testVar?.lowestFare}
+                <p className = "resultsDisplay">
+                   Arrival Airport: {flightData.arrivalCity},    
+                   Airline Code: {flightData.testVar?.airlineCode},   
+                   Your Price: ${flightData.testVar?.lowestFare}
 
-                </ul>
+                </p>
                 
 
             )
