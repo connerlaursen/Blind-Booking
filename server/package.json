@@ -4,6 +4,7 @@
   "description": "A blind booking vacation application",
   "main": "server.js",
   "scripts": {
+    "build": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/index.js"
