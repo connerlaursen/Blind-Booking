@@ -218,7 +218,7 @@ border: 3px solid black;
 .loginFields{
   display: flex;
   flex-direction: column;
-
+}
 /* send and clear button on contact page */
 .contactBtn {
   background-color: #059a93;
