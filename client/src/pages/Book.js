@@ -11,7 +11,7 @@ function BookTrip() {
     const [departureDate, setDepartureDate] = useState(new Date());
     const [returnDate, setReturnDate] = useState(new Date());
     const [maxAmount, setmaxAmount] = useState("0.00");
-    const [numPass, setnumPass] = useState("0");
+    const [numPass, setnumPass] = useState("1");
     const [activityDropDown, setactivityDropDown] = useState("food");
 
     async function handleSubmit(e) {
@@ -47,7 +47,8 @@ function BookTrip() {
     return (
         <div>
             <NavBar />
-            <form className="maxAmount">
+            <div className = "bookingCard">
+            <form className="maxAmount" id="formCard">
                 <div className="dateSelector">
                     <label className="travelDates">Departure Date</label>
                     <DatePicker
@@ -83,6 +84,10 @@ function BookTrip() {
                 </div>
                 <button onClick={handleSubmit} id="submitBtn">Submit</button>
             </form>
+            </div>
+            <footer id="content-wrap">
+                <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
+            </footer>
         </div>
     );
 };

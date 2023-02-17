@@ -10,7 +10,11 @@ function Home() {
                 imaginable. With just a few entries, we will cut through all the noise to give you
                 exactly what you want. A DREAM VACATION FOR A DREAM PRICE.
             </p></div>
+            <footer id="content-wrap">
+                <small id="footer">Copyright 2023 BBLLC. All Rights Reserved.</small>
+            </footer>
         </div>
+
     )
 }
 
