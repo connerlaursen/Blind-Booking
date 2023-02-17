@@ -20,7 +20,7 @@ const options = {
     price_max: userInput.maxPrice //this will be a variable/input
   },
   headers: {
-    'X-RapidAPI-Key': "4296f5bfe6msh980cd81462aad7bp160fdajsnbc15ada63a33",
+    'X-RapidAPI-Key': "25b57f83edmsh622992b967deba5p1517b6jsn5ad9e4b18d52",
     'X-RapidAPI-Host': 'priceline-com-provider.p.rapidapi.com'
   }
 };

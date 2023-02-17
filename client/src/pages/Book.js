@@ -49,9 +49,6 @@ const BookTrip = () => {
         fetch(url+requestData)
             .then(res=>res.json())
             .then(data=> {
-                console.log("=========================================")
-                console.log(data)
-                console.log("=========================================")
                 setFlightData(data)
                 setLoading(false)
     });
