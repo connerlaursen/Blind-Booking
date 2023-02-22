@@ -6,6 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
+  BrowserRouter,
+  Route,
+  Routes
 } from "react-router-dom";
 import Home from './pages/Home';
 import About from './pages/About';
@@ -39,7 +42,16 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/book" element={<BookTrip/>}/>
+      <Route path="/about" element={<About/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/login" element={<Login/>}/>
+    </Routes>
+    </BrowserRouter>
+    {/* <RouterProvider router={router} /> */}
     {/* <App /> */}
   </React.StrictMode>
 );
