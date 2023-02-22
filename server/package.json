@@ -4,6 +4,7 @@
   "description": "A blind booking vacation application",
   "main": "server.js",
   "scripts": {
+    "build": "npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/index.js"
@@ -30,6 +31,7 @@
     "express-session": "^1.17.3",
     "mysql2": "^3.1.0",
     "react": "^18.2.0",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "sqlite3": "^5.1.4"
   }
 }

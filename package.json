@@ -1,6 +1,7 @@
 {
   "name": "blind-booking",
   "version": "1.0.0",
+
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,9 +14,11 @@
     "url": "git+https://github.com/connerlaursen/Blind-Booking.git"
   },
   "author": "",
+
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/connerlaursen/Blind-Booking/issues"
   },
   "homepage": "https://github.com/connerlaursen/Blind-Booking#readme"
+
 }
