@@ -8,7 +8,7 @@ function Login() {
     e.preventDefault();
     console.log('get data!')
     // navigate('/book');
-    fetch('http://localhost:3001/api/users/login',{
+    fetch('/api/users/login',{
       method:"POST",
       body:JSON.stringify({
         email:"abc@abc.com",
@@ -23,7 +23,7 @@ function Login() {
 
   function createUser(e) {
     e.preventDefault();
-    fetch('http://localhost:3001/api/users/',{
+    fetch('/api/users/',{
       method:"POST",
       body:JSON.stringify({
         username:"johnDoe123",

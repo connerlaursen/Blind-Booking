@@ -23,7 +23,7 @@ const BookTrip = () => {
         setLoading(true)
         e.preventDefault();
 
-            const url = `${REACT_APP_BACKEND_API}/book`;
+            const url = `/book`;
             let requestData = `?maxPrice=${maxPrice}&numPassengers=${numPassengers}&category=${category}&departureDate=${departureDate}&returnDate=${returnDate}`
             fetch(url+requestData)
             .then(res=>res.json())
