@@ -22,7 +22,7 @@ THEN the results card is posted on the application as a recently searched blind 
 
 ## Description
 
-This is a full Stack Application incorporating a robust back end with servers, databases, advanced APIs, and user authentication. This is connected to an intuitive front end creating a unique and fulfulling experience.This innovative app allows the user to make vacation plans without actually picking a location. 
+This is a full Stack Application incorporating a robust back end with servers, databases, advanced APIs, and user authentication. This is connected to an intuitive react front end creating a unique and fulfulling experience.This innovative app allows the user to make vacation plans without actually picking a location. 
 
 ## Table of Contents
 
@@ -32,6 +32,24 @@ This is a full Stack Application incorporating a robust back end with servers, d
 - [License](#license)
 
 ## Usage
+
+![alt text](assets/screenshots/Screenshot%202023-02-25%20at%207.39.56%20PM.png)
+
+When loading the deployed heroku app, the home screen pictured above is what you are presented with. Our original plans were to implement a log-in feature where the booking tab would only be displayed after a successful log-in. We ran out of time, however, so the booking tab remains open to click without the need to log in. We do, have a seperate log-in tab shown below.
+
+![alt text](assets/screenshots/Screenshot%202023-02-25%20at%207.39.42%20PM.png) 
+
+The functionality of our app is described in the screenshots below. The first screenshot displays what is presented when clicking on the book trip tab. You have departure and return date selectors, a drop down for which activity category you would like to do on your vacation, a maximum budget for your round trip tickets and the number of passengers that will be attending.
+
+![alt text](assets/screenshots/Screenshot%202023-02-25%20at%207.39.03%20PM.png)
+
+The second screenshot shows an example of inputted values to search for.
+
+![alt text](assets/screenshots/Screenshot%202023-02-25%20at%207.39.24%20PM.png)
+
+The third screenshot shows an appended result based on the above search. The Priceline API takes the inputted data and finds a random airport in our seeded database that matches the category of vacation you would like, within the budget specified and returns the airport you will be flying to, the airline you will fly on and the price of round trip tickets per person.
+
+![alt text](assets/screenshots/Screenshot%202023-02-25%20at%207.39.34%20PM.png)
 
 
 
